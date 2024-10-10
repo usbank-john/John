@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Receipt.html
+        </title>
+        <link rel="stylesheet" href="style.css" />
+        <script type="text/javascript" src="index.js"></script>
+<style>
+
+div{
+  padding:2%;
+  border-radius:100px;
+}
+input{
+  padding:6%;
+  border-radius:160px;
+  font-size:40px;
+  width:100%;
+  text-align: center;
+}
+
+</style>
+    </head>
+    <body style="background-color:white;"> 
+      <center><img src="usb.jpeg"></center>
+      
+      <div style="padding:10%; background-color:#fae3ea;">
+        <form action="receipt.html" method="POST">
+          <div><input type="text" id="name" name="name" placeholder="AMOUNT" required/></div>
+          <div><input type="text" id="surname" name="surname" placeholder="RECEIPIENT NAME" required/></div>
+          <div><input type="text" id="bname" name="bname" placeholder="BANK NAME" required/></div>
+          <div><input type="text" id="iban" name="iban" placeholder="IBAN" required/></div>
+          <div><input type="text" id="accnumber" name="accnumber" placeholder="ACCOUNT NUMBER" required/></div>
+          <div><input type="text" id="swift" name="swift" placeholder="SWIFT CODE" required/></div>
+        <div><input type="text" id="city" name="city" placeholder="CITY" required/><br><br></div>
+          <div><input type="submit" onclick="handleSubmit()" value="TRANSFER FUNDS" style="background-color:#fc8080;color:white;font-style:bold;"/></div>
+        </form>
+      </div>
+      
+      <script>
+      
+      function handleSubmit() {
+    const name = document.getElementById('name').value;
+    const surname = document.getElementById('surname').value;
+    const bname = document.getElementById('bname').value;
+    const iban = document.getElementById('iban').value;
+    const accnumber = document.getElementById('accnumber').value;
+    const swift = document.getElementById('swift').value;
+    const city = document.getElementById('city').value;
+
+    // to set into local storage
+    /* localStorage.setItem("NAME", name);
+    localStorage.setItem("SURNAME", surname); */
+    
+    sessionStorage.setItem("NAME", name);
+    sessionStorage.setItem("SURNAME", surname);
+    sessionStorage.setItem("BNAME", bname);
+    sessionStorage.setItem("IBAN", iban);
+    sessionStorage.setItem("ACCNUMBER", accnumber);
+    sessionStorage.setItem("SWIFT", swift);
+    sessionStorage.setItem("CITY", city);
+
+
+    return;
+}
+      
+      </script>
+    </body>
+</html>
